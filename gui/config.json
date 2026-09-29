@@ -1,0 +1,32 @@
+{
+  "baud": 115200,
+  "boot_wait_ms": 2500,
+  "busy_timeout_s": 240,
+  "line_ending": "\n",
+  "protocol_prefix": "#",
+  "log_state_lines": false,
+  "legacy_parsing": true,
+  "on_connect_send": "",
+  "show_raw_terminal": true,
+
+  "initial_state": { "A": "37.1", "B": "-35.0", "INIT": "0", "DWELL": "90" },
+
+  "state_display": [
+    { "key": "A", "label": "Carriage A", "zone": [60, 90] },
+    { "key": "B", "label": "Carriage B", "zone": [-90, -60] }
+  ],
+  "state_extra": [
+    { "key": "INIT", "label": "สถานะ", "map": { "1": "init แล้ว", "0": "ยังไม่ init" } },
+    { "key": "DWELL", "label": "Dwell", "suffix": " ms" }
+  ],
+  "info_text": "Home: A 37.1 / B -35.0\nSync: B = A - 180\nStep/องศา: 530.14\nโซนสีเหลือง = โซนแรงโน้มถ่วง (A 60-90°, B -60~-90°)\nระหว่างหมุนเฟิร์มแวร์ไม่รับคำสั่ง หยุดกลางทางไม่ได้",
+
+  "legacy_patterns": {
+    "angles_both": "A=(-?\\d+(?:\\.\\d+)?),\\s*B=(-?\\d+(?:\\.\\d+)?)",
+    "single_current": "กล่อง\\s*([AB])\\s*ตำแหน่งปัจจุบัน:\\s*(-?\\d+(?:\\.\\d+)?)",
+    "single_set": "กล่อง\\s*([AB])\\s*\\(.*?\\)\\s*=\\s*(-?\\d+(?:\\.\\d+)?)",
+    "done_markers": ["📍", "✅", "❌", "📐"],
+    "init_true_markers": ["📐", "✅ ถึงแล้ว"],
+    "init_false_markers": ["ถึงจุดจอด"]
+  }
+}

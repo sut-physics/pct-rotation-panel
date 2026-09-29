@@ -1,0 +1,41 @@
+{
+  "groups": [
+    {
+      "title": "ขยับมอเตอร์ (ไม่ยิง)",
+      "items": [
+        {
+          "type": "row",
+          "items": [
+            { "type": "button", "label": "start → A 90 / B -90", "send": "start" },
+            { "type": "button", "label": "close → home", "send": "close" }
+          ]
+        },
+        { "type": "separator" },
+        { "type": "note", "text": "ไปมุมแบบซิงค์ (B ตามไปที่ A - 180)" },
+        {
+          "type": "field",
+          "prefix": "A →",
+          "button": "ไป",
+          "send": "{value}",
+          "default": "0",
+          "requires_init": true,
+          "warn_abs_over": 360,
+          "nudge": { "from": "A", "steps": [-15, -5, -1, 1, 5, 15] },
+          "preview": { "label": "B", "offset": -180 }
+        }
+      ]
+    },
+    {
+      "title": "คาลิเบรต / แก้ตำแหน่ง",
+      "items": [
+        { "type": "note", "text": "สั่งมอเตอร์กล่องเดียว A<มุม> / B<มุม> (ขยับจริง)" },
+        { "type": "field", "prefix": "A", "button": "ขยับ A", "send": "A{value}", "default": "37.1", "warn_abs_over": 360 },
+        { "type": "field", "prefix": "B", "button": "ขยับ B", "send": "B{value}", "default": "-35", "warn_abs_over": 360 },
+        { "type": "separator" },
+        { "type": "note", "text": "ประกาศตำแหน่งจริงหลังดันมือ SETA / SETB (ไม่ขยับมอเตอร์) ต้องประกาศให้ครบทั้งคู่ถึงจะ init" },
+        { "type": "field", "prefix": "SETA", "button": "ประกาศ A", "send": "SETA{value}", "default": "60", "busy": false },
+        { "type": "field", "prefix": "SETB", "button": "ประกาศ B", "send": "SETB{value}", "default": "-60", "busy": false }
+      ]
+    }
+  ]
+}
