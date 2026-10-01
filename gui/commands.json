@@ -20,7 +20,7 @@
           "default": "0",
           "requires_init": true,
           "warn_abs_over": 360,
-          "nudge": { "from": "A", "steps": [-15, -5, -1, 1, 5, 15] },
+          "nudge": { "from": "A", "steps": [-15, -10, -5, -1, 1, 5, 10, 15] },
           "preview": { "label": "B", "offset": -180 }
         }
       ]

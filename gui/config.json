@@ -15,11 +15,34 @@
     { "key": "A", "label": "Carriage A", "zone": [60, 90] },
     { "key": "B", "label": "Carriage B", "zone": [-90, -60] }
   ],
+  "dial": { "size": 196, "rotate": 270, "clockwise": true, "ticks": 30 },
+
+  "sensor": {
+    "enabled": true,
+    "label": "เซนเซอร์มุม (ESP32 + BNO085)",
+    "display_label": "เซนเซอร์ (Carriage A จริง)",
+    "short": "S",
+    "baud": 9600,
+    "pattern": "Angle:\\s*(-?\\d+(?:\\.\\d+)?)",
+    "scale": 1,
+    "offset": 0,
+    "compare_to": "A",
+    "warn_diff": 2,
+    "stale_ms": 1000,
+    "monitor_max_lines": 2000,
+    "line_ending": "\n",
+    "buttons": [
+      { "label": "ตั้งศูนย์ (z)", "send": "z" }
+    ],
+    "zero_ref": "A",
+    "zero_markers": ["Zero set!", "Pitch (degree)"]
+  },
+
   "state_extra": [
     { "key": "INIT", "label": "สถานะ", "map": { "1": "init แล้ว", "0": "ยังไม่ init" } },
     { "key": "DWELL", "label": "Dwell", "suffix": " ms" }
   ],
-  "info_text": "Home: A 37.1 / B -35.0\nSync: B = A - 180\nStep/องศา: 530.14\nโซนสีเหลือง = โซนแรงโน้มถ่วง (A 60-90°, B -60~-90°)\nระหว่างหมุนเฟิร์มแวร์ไม่รับคำสั่ง หยุดกลางทางไม่ได้",
+  "info_text": "Home: A 37.1 / B -35.0\nSync: B = A - 180\nStep/องศา: 525.51\nโซนสีเหลือง = โซนแรงโน้มถ่วง (A 60-90°, B -60~-90°)\nระหว่างหมุนเฟิร์มแวร์ไม่รับคำสั่ง หยุดกลางทางไม่ได้",
 
   "legacy_patterns": {
     "angles_both": "A=(-?\\d+(?:\\.\\d+)?),\\s*B=(-?\\d+(?:\\.\\d+)?)",
