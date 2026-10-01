@@ -54,7 +54,7 @@ long pulseSetting = 3200;
 float gearRatio = 4.25;
 long totalPulsesForOneGearRev = pulseSetting * gearRatio;
 
-float trackDiameter = 680.8;
+float trackDiameter = 674.8;
 float gearDiameter = 48.51;
 float gearRevsNeeded = trackDiameter / gearDiameter;
 float totalStepsFor360 = gearRevsNeeded * totalPulsesForOneGearRev;
